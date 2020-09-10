@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,12 +33,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //    TextView text = findViewById(R.id.text1);
     RecyclerView hrecyclerView;
     HoroscopeAdapter horoscopeAdapter;
-    TextView text, txtdate;
+    TextView text1, text, txtdate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        text = findViewById(R.id.text1);
+        text1 = findViewById(R.id.textSearch);
+//        text = findViewById(R.id.text1);
         txtdate = findViewById(R.id.txt_date);
         spinner = (Spinner)findViewById(R.id.spinner);
         hrecyclerView = findViewById(R.id.recyclerRasifal);
@@ -47,6 +49,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+        text1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("kjaskas");
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
 //        showOurHoroscope();
     }
 
@@ -85,13 +95,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private void showOurHoroscope() {
         System.out.println("in show hor");
-//        if(types!=null && newdate!=null) {
-//            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
-//            Date date = new Date();
-//            newdate = formatter.format(date);
-////            Log.v(TAG, "New Date " + newdate);
-////            Log.v(TAG, "types " + types + "\n" + "date " + newdate);
-//        }
         ApiInterface horoscopeAPI = APIClient.getApiClient().create(ApiInterface.class);
         Call<List<HoroscopeDatamodel>> call = horoscopeAPI.showHoroscope(types, newdate);
 
