@@ -31,6 +31,7 @@ public class SearchingActivity extends AppCompatActivity {
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //skmkgit
                 Toast.makeText(getApplicationContext(),"before text change", Toast.LENGTH_LONG).show();
             }
 
