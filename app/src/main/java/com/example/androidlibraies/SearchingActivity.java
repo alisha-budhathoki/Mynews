@@ -15,8 +15,8 @@ public class SearchingActivity extends AppCompatActivity {
     private EditText editText;
     private ArrayAdapter<String> adapter;
 
-    private String products[] = {"Apple", "Banana","Pinapple", "Orange", "Papaya", "Melon",
-            "Grapes", "Water Melon","Lychee", "Guava", "Mango", "Kivi"};
+    private String products[] = {"Apple cider", "Banana","Pinapple", "Orange", "Papaya", "Melon",
+            "Grapes bat", "Water Melon","Lychee", "Guava", "Mango", "Kivi", "My Favourites"};
 
 
     @Override
