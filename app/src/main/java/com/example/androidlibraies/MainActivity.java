@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //    TextView text = findViewById(R.id.text1);
     RecyclerView hrecyclerView;
     HoroscopeAdapter horoscopeAdapter;
-    TextView text1, text, txtdate;
+    TextView text1,  txtdate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,11 +52,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         text1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("kjaskas");
-                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
-                startActivity(intent);
+                Intent hereIntent = new Intent(MainActivity.this, SearchingActivity.class);
+                startActivity(hereIntent);
             }
         });
+//        text1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                    Intent loginintent = new Intent(MainActivity.this, SearchActivity.class);
+//                    startActivity(loginintent);
+//                System.out.println("smansn");
+//            }
+//        });
+
 //        showOurHoroscope();
     }
 
